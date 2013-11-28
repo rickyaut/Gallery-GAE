@@ -12,14 +12,13 @@
                  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
              ">
 
-
+	<!-- 
     <context:component-scan base-package="org.springframework.samples.travel.services"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <import resource="ds.xml"/>
 
     <security:http>
-        <!-- Authentication policy -->
         <security:form-login login-page="/users/login" login-processing-url="/users/login/authenticate" default-target-url="/hotels" authentication-failure-url="/users/login?login_error=1"/>
         <security:logout logout-url="/users/logout" logout-success-url="/users/logoutSuccess"/>
     </security:http>
@@ -37,5 +36,5 @@
             </security:user-service>
         </security:authentication-provider>
     </security:authentication-manager>
-
+	 -->
 </beans>

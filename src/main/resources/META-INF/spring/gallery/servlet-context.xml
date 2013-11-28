@@ -10,7 +10,7 @@
 
 
 
-    <context:component-scan base-package="org.springframework.samples.travel.web"/>
+    <context:component-scan base-package="com.rickyaut.gallery"/>
 
     <!-- Configures the Spring MVC @Controller programming model -->
     <mvc:annotation-driven/>
@@ -36,7 +36,6 @@
 
     <!-- Plugs in a custom creator for Web Flow views -->
     <wf:flow-builder-services id="flowBuilderServices" view-factory-creator="viewFactoryCreator" development="true"/>
-
 
     <!-- Configures transaction management around @Transactional components -->
 

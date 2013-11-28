@@ -6,39 +6,57 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Spring Travel: Spring MVC and Web Flow Reference Application</title>
-	<link type="text/css" rel="stylesheet" href="<c:url value="/resources/javascript/dijit/themes/tundra/tundra.css" />" />
-	<link rel="stylesheet" href="<c:url value="/resources/styles/blueprint/screen.css" />" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="<c:url value="/resources/styles/blueprint/print.css" />" type="text/css" media="print" />
-	<!--[if lt IE 8]>
-	        <link rel="stylesheet" href="<c:url value="/resources/blueprint/ie.css" />" type="text/css" media="screen, projection" />
-	<![endif]-->
-	<link rel="stylesheet" href="<c:url value="/resources/styles/travel.css" />" type="text/css" media="screen" />
-    <script type="text/javascript" src="<c:url value="/resources/javascript/dojo/dojo.js" />"></script>
-    <script type="text/javascript" src="<c:url value="/resources/javascript/spring/Spring.js" />"></script>
-    <script type="text/javascript" src="<c:url value="/resources/javascript/spring/Spring-Dojo.js" />"></script>
+	<link rel="stylesheet" href="<c:url value="/css/bootstrap/bootstrap.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/css/bootstrap/bootstrap-theme.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/css/jquery-ui/jquery-ui.css" />" type="text/css" media="screen, projection" />
+
+    <script type="text/javascript" src="<c:url value="/js/jquery-2.0.3.min.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/js/jquery-ui/jquery-ui.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/js/bootstrap/bootstrap.min.js" />"></script>
 </head>
-<body class="tundra">
-<div id="page" class="container">
-	<div id="header">
-		<div id="topbar">
-			<p>
-				<security:authorize ifAllGranted="ROLE_USER">
-					<c:if test="${pageContext.request.userPrincipal != null}">
-						Welcome, ${pageContext.request.userPrincipal.name} |
-					</c:if>
-					<a href="<c:url value="/users/logout" />">Logout</a>
-				</security:authorize>
-				<security:authorize ifAllGranted="ROLE_ANONYMOUS">
-					<a href="<c:url value="/users/login" />">Login</a>
-				</security:authorize>
-			</p>
+<body>
+<div class="container">
+	<div class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            	<span class="sr-only">Toggle navigation</span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+          	</button>
+          	<a class="navbar-brand" href="/">Home</a>
 		</div>
-		<div id="logo">
-			<p>
-				<a href="<c:url value="/" />">
-					<img src="<c:url value="/resources/images/header.jpg"/>" alt="Spring Travel" />
-				</a>
-			</p>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li><a href="#">Link</a></li>
+	            <li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicles <b class="caret"></b></a>
+		              <ul class="dropdown-menu">
+			                <li><a href="/audi/vehicles">Audi</a></li>
+			                <li><a href="/benz/vehicles">Mercedes Benz</a></li>
+			                <li><a href="/bmw/vehicles">BMW</a></li>
+			                <li><a href="/ford/vehicles">Ford</a></li>
+			                <li><a href="/gm/vehicles">GM</a></li>
+			                <li><a href="/honda/vehicles">Honda</a></li>
+			                <li><a href="/jaguar/vehicles">Jaguar</a></li>
+			                <li><a href="/lamborghini/vehicles">Lamborghini</a></li>
+			                <li><a href="/Lexus/vehicles">Lexus</a></li>
+			                <li><a href="/maserati/vehicles">Maserati</a></li>
+			                <li><a href="/mazda/vehicles">Mazda</a></li>
+			                <li><a href="/porsche/vehicles">Porsche</a></li>
+			                <li><a href="/toyota/vehicles">Toyota</a></li>
+		              </ul>
+	            </li>
+	        </ul>
+	        <%--
+	        <ul class="nav navbar-nav navbar-right">
+	            <li class="active"><a href="./">Default</a></li>
+	            <li><a href="../navbar-static-top/">Static top</a></li>
+	            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+          	</ul>
+          	 --%>
 		</div>
 	</div>
 	<div id="content">
@@ -60,9 +78,7 @@
 	</div>
 	<hr />
 	<div id="footer">
-		<a href="http://www.springframework.org">
-			<img src="<c:url value="/resources/images/powered-by-spring.png"/>" alt="Powered by Spring" />
-		</a>
+		<div class="container"></div>
 	</div>
 </div>
 </body>
