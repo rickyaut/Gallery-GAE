@@ -5,8 +5,8 @@
 	
 <tiles-definitions>
 	
-	<definition name="home" extends="standardLayout">
-		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	<definition name="index" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
 	</definition>
 		
 </tiles-definitions>
