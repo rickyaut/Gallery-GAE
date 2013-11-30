@@ -11,6 +11,8 @@
                  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
                  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
              ">
+    <!-- This is important for autowiring bean classes which doesn't have class level annotation -->
+    <context:annotation-config />
 
 	<!-- 
     <context:component-scan base-package="org.springframework.samples.travel.services"/>
@@ -37,4 +39,7 @@
         </security:authentication-provider>
     </security:authentication-manager>
 	 -->
+	 <bean id="vehicleService" class="com.rickyaut.gallery.VehicleServiceImpl"></bean>
+	 <bean id="jsonFactory" class="org.codehaus.jackson.JsonFactory"></bean>
+	 <bean id="jsonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper"></bean>
 </beans>
