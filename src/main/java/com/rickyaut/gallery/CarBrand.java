@@ -18,7 +18,8 @@ public enum CarBrand{
 	Maserati("maserati", "", "maserati-gallery.json"), 
 	Mazda("mazda", "", "mazda-gallery.json"), 
 	Porsche("porsche", "", "porsche-gallery.json"), 
-	Toyota("toyota", "", "toyota-gallery.json");
+	Toyota("toyota", "", "toyota-gallery.json"), 
+	Volvo("volvo", "", "volvo-gallery.json");
 
 	private String shortName;
 	private String iconFileName;

@@ -4,21 +4,21 @@
 <%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.Vehicle, com.rickyaut.gallery.Image, org.apache.commons.collections.CollectionUtils"%>
 <div>
 	<ol class="breadcrumb">
-	  <li><spring:message code="cars"/></li>
-	  <li><a href="/brand/${selectedBrand.shortName }/cars"><spring:message code="${selectedBrand.code }"/></a></li>
-	  <li class="active">${selectedVehicle.name }</li>
+	  <li><spring:message code="boats"/></li>
+	  <li><a href="/brand/${selectedBrand.shortName }/boats"><spring:message code="${selectedBrand.code }"/></a></li>
+	  <li class="active">${selectedBoat.name }</li>
 	</ol>
 	<%
 	List<Image> images = new ArrayList<Image>();
-	Vehicle car = (Vehicle)request.getAttribute("selectedCar");
-	if(car.getImages()!=null){
-		CollectionUtils.addAll(images, car.getImages().iterator());
+	Vehicle boat = (Vehicle)request.getAttribute("selectedBoat");
+	if(boat.getImages()!=null){
+		CollectionUtils.addAll(images, boat.getImages().iterator());
 	}
-	if(car.getExteriorImages()!=null){
-		CollectionUtils.addAll(images, car.getExteriorImages().iterator());
+	if(boat.getExteriorImages()!=null){
+		CollectionUtils.addAll(images, boat.getExteriorImages().iterator());
 	}
-	if(car.getInteriorImages() != null){
-		CollectionUtils.addAll(images, car.getInteriorImages().iterator());
+	if(boat.getInteriorImages() != null){
+		CollectionUtils.addAll(images, boat.getInteriorImages().iterator());
 	}
 	pageContext.setAttribute("images", images);
 	%>

@@ -64,4 +64,57 @@ public class VehicleServiceImpl implements VehicleService {
 		return null;
 	}
 
+	@Override
+	public List<Vehicle> findTrucksByBrand(TruckBrand brand) {
+		URL url = getClass().getClassLoader().getResource("json/truck/"+brand.getDataFileName());
+		try {
+			Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
+			logger.debug(String.format("found %d trucks for %s", vehicleArray.length, brand.name()));
+			return Arrays.asList(vehicleArray);
+		} catch (JsonProcessingException e) {
+			logger.error(e.getMessage(), e);
+		} catch (IOException e) {
+			logger.error(e.getMessage(), e);
+		}
+		return new ArrayList<Vehicle>();
+	}
+
+	@Override
+	public Vehicle getTruck(TruckBrand brand, String truckStandardName) {
+		List<Vehicle> vehicles = findTrucksByBrand(brand);
+		for(Vehicle vehicle: vehicles){
+			String standardName = vehicle.getName().toLowerCase().replaceAll(" ", "-");
+			if(StringUtils.equals(standardName, truckStandardName)){
+				return vehicle;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public List<Vehicle> findBoatsByBrand(BoatBrand brand) {
+		URL url = getClass().getClassLoader().getResource("json/boat/"+brand.getDataFileName());
+		try {
+			Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
+			logger.debug(String.format("found %d boats for %s", vehicleArray.length, brand.name()));
+			return Arrays.asList(vehicleArray);
+		} catch (JsonProcessingException e) {
+			logger.error(e.getMessage(), e);
+		} catch (IOException e) {
+			logger.error(e.getMessage(), e);
+		}
+		return new ArrayList<Vehicle>();
+	}
+
+	@Override
+	public Vehicle getBoat(BoatBrand brand, String boatStandardName) {
+		List<Vehicle> vehicles = findBoatsByBrand(brand);
+		for(Vehicle vehicle: vehicles){
+			String standardName = vehicle.getName().toLowerCase().replaceAll(" ", "-");
+			if(StringUtils.equals(standardName, boatStandardName)){
+				return vehicle;
+			}
+		}
+		return null;
+	}
 }

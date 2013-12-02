@@ -19,6 +19,7 @@
 <body>
 <c:set var="carBrands" value="<%=com.rickyaut.gallery.CarBrand.values()%>"/>
 <c:set var="truckBrands" value="<%=com.rickyaut.gallery.TruckBrand.values()%>"/>
+<c:set var="boatBrands" value="<%=com.rickyaut.gallery.BoatBrand.values()%>"/>
 	<div class="container">
 		<div class="page-header">
 		  	<img src="/todo.jpg"/>
@@ -51,6 +52,14 @@
 		            <ul class="dropdown-menu">
 		            	<c:forEach items="${truckBrands }" var="brand">
 			            <li><a href="/brand/${brand.shortName }/trucks"><spring:message code="${brand.code }"/></a></li>
+		            	</c:forEach>
+		            </ul>
+	            </li>
+	            <li class="dropdown">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boat <b class="caret"></b></a>
+		            <ul class="dropdown-menu">
+		            	<c:forEach items="${boatBrands }" var="brand">
+			            <li><a href="/brand/${brand.shortName }/boats"><spring:message code="${brand.code }"/></a></li>
 		            	</c:forEach>
 		            </ul>
 	            </li>

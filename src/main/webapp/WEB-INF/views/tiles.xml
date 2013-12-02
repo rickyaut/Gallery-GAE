@@ -17,8 +17,24 @@
 		<put-attribute name="body" value="/WEB-INF/views/cars.jsp" />
 	</definition>
 		
-	<definition name="images" extends="standardLayout">
-		<put-attribute name="body" value="/WEB-INF/views/images.jsp" />
+	<definition name="trucks" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/trucks.jsp" />
+	</definition>
+		
+	<definition name="boats" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/boats.jsp" />
+	</definition>
+		
+	<definition name="car.images" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/car.images.jsp" />
+	</definition>
+		
+	<definition name="truck.images" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/truck.images.jsp" />
+	</definition>
+		
+	<definition name="boat.images" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/boat.images.jsp" />
 	</definition>
 		
 	<definition name="videos" extends="standardLayout">
