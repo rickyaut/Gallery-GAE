@@ -38,11 +38,11 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	@Override
-	public List<Vehicle> findVehiclesByBrand(Brand brand) {
-		URL url = getClass().getClassLoader().getResource("json/"+brand.getDataFileName());
+	public List<Vehicle> findCarsByBrand(CarBrand brand) {
+		URL url = getClass().getClassLoader().getResource("json/car/"+brand.getDataFileName());
 		try {
 			Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
-			logger.debug(String.format("found %d vehicles for %s", vehicleArray.length, brand.name()));
+			logger.debug(String.format("found %d cars for %s", vehicleArray.length, brand.name()));
 			return Arrays.asList(vehicleArray);
 		} catch (JsonProcessingException e) {
 			logger.error(e.getMessage(), e);
@@ -53,8 +53,8 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	@Override
-	public Vehicle getVehicle(Brand brand, String vehicleStandardName) {
-		List<Vehicle> vehicles = findVehiclesByBrand(brand);
+	public Vehicle getCar(CarBrand brand, String vehicleStandardName) {
+		List<Vehicle> vehicles = findCarsByBrand(brand);
 		for(Vehicle vehicle: vehicles){
 			String standardName = vehicle.getName().toLowerCase().replaceAll(" ", "-");
 			if(StringUtils.equals(standardName, vehicleStandardName)){

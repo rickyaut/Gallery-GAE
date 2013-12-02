@@ -14,29 +14,29 @@ public class VehiclesController {
 	@Autowired
 	VehicleService vehicleService;
 	
-	@RequestMapping(value="/brand/{brandShortName}/vehicles", method=RequestMethod.GET)
+	@RequestMapping(value="/brand/{brandShortName}/cars", method=RequestMethod.GET)
 	public ModelAndView listVehicles(@PathVariable String brandShortName){
-		Brand selectedBrand = Brand.findByShortName(brandShortName);
-		List<Vehicle> vehicles = vehicleService.findVehiclesByBrand(selectedBrand);
-		Brand[] brands = Brand.values();
-		ModelAndView modelAndView = new ModelAndView("vehicles");
+		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
+		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
+		CarBrand[] brands = CarBrand.values();
+		ModelAndView modelAndView = new ModelAndView("cars");
 		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("vehicles", vehicles);
+		modelAndView.addObject("cars", cars);
 		modelAndView.addObject("brands", brands);
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/brand/{brandShortName}/vehicle/{vehicleStandardName}/images", method=RequestMethod.GET)
-	public ModelAndView showImages(@PathVariable String brandShortName, @PathVariable String vehicleStandardName){
-		Brand selectedBrand = Brand.findByShortName(brandShortName);
-		Vehicle selectedVehicle = vehicleService.getVehicle(selectedBrand, vehicleStandardName);
+	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/images", method=RequestMethod.GET)
+	public ModelAndView showImages(@PathVariable String brandShortName, @PathVariable String carStandardName){
+		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
+		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
 		ModelAndView modelAndView = new ModelAndView("images");
 		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("selectedVehicle", selectedVehicle);
+		modelAndView.addObject("selectedCar", selectedCar);
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/brand/{brandName}/vehicle/{vehicleName}/videos", method=RequestMethod.GET)
+	@RequestMapping(value="/brand/{brandName}/car/{vehicleName}/videos", method=RequestMethod.GET)
 	public ModelAndView showVideos(@PathVariable String brandName, @PathVariable String vehicleName){
 		System.out.println(brandName);
 		return new ModelAndView("videos");

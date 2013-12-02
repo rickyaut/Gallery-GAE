@@ -1,12 +1,15 @@
 package com.rickyaut.gallery;
 
 
-public enum Brand{
+public enum CarBrand{
 	Audi("audi", "", "audi-gallery.json"), 
 	Benz("benz", "", "benz-gallery.json"), 
 	BMW("bmw", "", "bmw-gallery.json"), 
 	Ford("ford", "", "ford-gallery.json"), 
-	GM("gm", "", "gm-gallery.json"), 
+	GM_BUICK("buick", "", "gm-buick-gallery.json"), 
+	GM_Cadillac("cadillac", "", "gm-cadillac-gallery.json"), 
+	GM_Chevrolet("chevrolet", "", "gm-chevrolet-gallery.json"), 
+	GM_GMC("gmc", "", "gm-gmc-gallery.json"), 
 	Holden("holden", "", "holden-gallery.json"), 
 	Honda("honda", "", "honda-gallery.json"), 
 	Jaguar("jaguar", "", "jaguar-gallery.json"), 
@@ -21,8 +24,8 @@ public enum Brand{
 	private String iconFileName;
 	private String dataFileName;
 	
-	public static Brand findByShortName(String shortName){
-		for(Brand brand: Brand.values()){
+	public static CarBrand findByShortName(String shortName){
+		for(CarBrand brand: CarBrand.values()){
 			if(brand.shortName.equals(shortName)){
 				return brand;
 			}
@@ -30,7 +33,7 @@ public enum Brand{
 		return null;
 	}
 	
-	Brand(String shortName, String iconFileName, String dataFileName){
+	CarBrand(String shortName, String iconFileName, String dataFileName){
 		this.shortName = shortName;
 		this.iconFileName = iconFileName;
 		this.dataFileName = dataFileName;

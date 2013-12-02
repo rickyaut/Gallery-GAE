@@ -11,8 +11,8 @@ public class VehicleServiceTest {
 
 	@Test
 	public void test() {
-		Brand brand = Brand.Toyota;
-		URL url = getClass().getClassLoader().getResource("json/"+brand.getDataFileName());
+		CarBrand brand = CarBrand.Toyota;
+		URL url = getClass().getClassLoader().getResource("json/car/"+brand.getDataFileName());
 		try {
 			Vehicle[] vehicleArray = new ObjectMapper().readValue(url, Vehicle[].class);
 			System.out.println(String.format("found %d vehicles for %s", vehicleArray.length, brand.name()));

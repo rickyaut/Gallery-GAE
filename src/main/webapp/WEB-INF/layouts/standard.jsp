@@ -17,10 +17,11 @@
     <script type="text/javascript" src="<c:url value="/js/bootstrap/bootstrap.min.js" />"></script>
 </head>
 <body>
-<c:set var="brands" value="<%=com.rickyaut.gallery.Brand.values()%>"/>
+<c:set var="carBrands" value="<%=com.rickyaut.gallery.CarBrand.values()%>"/>
+<c:set var="truckBrands" value="<%=com.rickyaut.gallery.TruckBrand.values()%>"/>
 	<div class="container">
 		<div class="page-header">
-		  	<img src="todo.jpg"/>
+		  	<img src="/todo.jpg"/>
 		</div>
 	</div>
 <div class="container">
@@ -38,10 +39,18 @@
 			<ul class="nav navbar-nav">
 	            <li class="active"><a href="/contact-us"><spring:message code="contact.us"/></a></li>
 	            <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vehicles <b class="caret"></b></a>
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cars <b class="caret"></b></a>
 		            <ul class="dropdown-menu">
-		            	<c:forEach items="${brands }" var="brand">
-			            <li><a href="/brand/${brand.shortName }/vehicles"><spring:message code="${brand.code }"/></a></li>
+		            	<c:forEach items="${carBrands }" var="brand">
+			            <li><a href="/brand/${brand.shortName }/cars"><spring:message code="${brand.code }"/></a></li>
+		            	</c:forEach>
+		            </ul>
+	            </li>
+	            <li class="dropdown">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Truck <b class="caret"></b></a>
+		            <ul class="dropdown-menu">
+		            	<c:forEach items="${truckBrands }" var="brand">
+			            <li><a href="/brand/${brand.shortName }/trucks"><spring:message code="${brand.code }"/></a></li>
 		            	</c:forEach>
 		            </ul>
 	            </li>

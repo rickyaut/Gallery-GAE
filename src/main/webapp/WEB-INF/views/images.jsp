@@ -4,23 +4,22 @@
 <%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.Vehicle, com.rickyaut.gallery.Image, org.apache.commons.collections.CollectionUtils"%>
 <div>
 	<ol class="breadcrumb">
-	  <li><spring:message code="vehicles"/></li>
-	  <li><a href="/brand/${selectedBrand.shortName }/vehicles"><spring:message code="${selectedBrand.code }"/></a></li>
+	  <li><spring:message code="cars"/></li>
+	  <li><a href="/brand/${selectedBrand.shortName }/cars"><spring:message code="${selectedBrand.code }"/></a></li>
 	  <li class="active">${selectedVehicle.name }</li>
 	</ol>
 	<%
 	List<Image> images = new ArrayList<Image>();
-	Vehicle vehicle = (Vehicle)request.getAttribute("selectedVehicle");
-	if(vehicle.getImages()!=null){
-		CollectionUtils.addAll(images, vehicle.getImages().iterator());
+	Vehicle car = (Vehicle)request.getAttribute("selectedCar");
+	if(car.getImages()!=null){
+		CollectionUtils.addAll(images, car.getImages().iterator());
 	}
-	if(vehicle.getExteriorImages()!=null){
-		CollectionUtils.addAll(images, vehicle.getExteriorImages().iterator());
+	if(car.getExteriorImages()!=null){
+		CollectionUtils.addAll(images, car.getExteriorImages().iterator());
 	}
-	if(vehicle.getInteriorImages() != null){
-		CollectionUtils.addAll(images, vehicle.getInteriorImages().iterator());
+	if(car.getInteriorImages() != null){
+		CollectionUtils.addAll(images, car.getInteriorImages().iterator());
 	}
-	System.out.println("number of images: "+images.size());
 	pageContext.setAttribute("images", images);
 	%>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -36,7 +35,8 @@
 	          <img src="${image.imageUrl }">
 	          <div class="container">
 	            <div class="carousel-caption">
-	              <h1>${image.description }</h1>
+	              <h1></h1>
+	              <p>${image.description }</p>
 	            </div>
 	          </div>
 	        </div>
