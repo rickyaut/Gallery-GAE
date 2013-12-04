@@ -2,54 +2,43 @@ package com.rickyaut.gallery;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.appengine.api.memcache.MemcacheService;
+
 public class VehicleServiceImpl implements VehicleService {
-	private final static Log logger = LogFactory.getLog(VehicleServiceImpl.class);
-	@Autowired
-	private JsonFactory jsonFactory;
+	private static final Logger logger = Logger.getLogger(VehicleServiceImpl.class.getName());
 	@Autowired
 	private ObjectMapper jsonObjectMapper;
-
-	public JsonFactory getJsonFactory() {
-		return jsonFactory;
-	}
-
-	public void setJsonFactory(JsonFactory jsonFactory) {
-		this.jsonFactory = jsonFactory;
-	}
-
-	public ObjectMapper getJsonObjectMapper() {
-		return jsonObjectMapper;
-	}
-
-	public void setJsonObjectMapper(ObjectMapper jsonObjectMapper) {
-		this.jsonObjectMapper = jsonObjectMapper;
-	}
+	
+	@Autowired
+	private MemcacheService syncCache;
 
 	@Override
 	public List<Vehicle> findCarsByBrand(CarBrand brand) {
-		URL url = getClass().getClassLoader().getResource("json/car/"+brand.getDataFileName());
-		try {
-			Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
-			logger.debug(String.format("found %d cars for %s", vehicleArray.length, brand.name()));
-			return Arrays.asList(vehicleArray);
-		} catch (JsonProcessingException e) {
-			logger.error(e.getMessage(), e);
-		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
+		String dataFileName = "json/car/"+brand.getDataFileName();
+		List<Vehicle> vehicles = (List<Vehicle>)syncCache.get(dataFileName);
+		if(vehicles == null){
+			URL url = getClass().getClassLoader().getResource(dataFileName);
+			try {
+				Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
+				vehicles = Arrays.asList(vehicleArray);
+				syncCache.put(dataFileName, vehicles);
+			} catch (JsonProcessingException e) {
+				logger.log(Level.SEVERE, e.getMessage(), e);
+			} catch (IOException e) {
+				logger.log(Level.SEVERE, e.getMessage(), e);
+			}
 		}
-		return new ArrayList<Vehicle>();
+		return vehicles;
 	}
 
 	@Override
@@ -66,17 +55,21 @@ public class VehicleServiceImpl implements VehicleService {
 
 	@Override
 	public List<Vehicle> findTrucksByBrand(TruckBrand brand) {
-		URL url = getClass().getClassLoader().getResource("json/truck/"+brand.getDataFileName());
-		try {
-			Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
-			logger.debug(String.format("found %d trucks for %s", vehicleArray.length, brand.name()));
-			return Arrays.asList(vehicleArray);
-		} catch (JsonProcessingException e) {
-			logger.error(e.getMessage(), e);
-		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
+		String dataFileName = "json/truck/"+brand.getDataFileName();
+		List<Vehicle> vehicles = (List<Vehicle>)syncCache.get(dataFileName);
+		if(vehicles == null){
+			URL url = getClass().getClassLoader().getResource(dataFileName);
+			try {
+				Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
+				vehicles = Arrays.asList(vehicleArray);
+				syncCache.put(dataFileName, vehicles);
+			} catch (JsonProcessingException e) {
+				logger.log(Level.SEVERE, e.getMessage(), e);
+			} catch (IOException e) {
+				logger.log(Level.SEVERE, e.getMessage(), e);
+			}
 		}
-		return new ArrayList<Vehicle>();
+		return vehicles;
 	}
 
 	@Override
@@ -93,17 +86,21 @@ public class VehicleServiceImpl implements VehicleService {
 
 	@Override
 	public List<Vehicle> findBoatsByBrand(BoatBrand brand) {
-		URL url = getClass().getClassLoader().getResource("json/boat/"+brand.getDataFileName());
-		try {
-			Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
-			logger.debug(String.format("found %d boats for %s", vehicleArray.length, brand.name()));
-			return Arrays.asList(vehicleArray);
-		} catch (JsonProcessingException e) {
-			logger.error(e.getMessage(), e);
-		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
+		String dataFileName = "json/boat/"+brand.getDataFileName();
+		List<Vehicle> vehicles = (List<Vehicle>)syncCache.get(dataFileName);
+		if(vehicles == null){
+			URL url = getClass().getClassLoader().getResource(dataFileName);
+			try {
+				Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
+				vehicles = Arrays.asList(vehicleArray);
+				syncCache.put(dataFileName, vehicles);
+			} catch (JsonProcessingException e) {
+				logger.log(Level.SEVERE, e.getMessage(), e);
+			} catch (IOException e) {
+				logger.log(Level.SEVERE, e.getMessage(), e);
+			}
 		}
-		return new ArrayList<Vehicle>();
+		return vehicles;
 	}
 
 	@Override

@@ -29,17 +29,25 @@ public class VehiclesController {
 	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/images", method=RequestMethod.GET)
 	public ModelAndView showCarImages(@PathVariable String brandShortName, @PathVariable String carStandardName){
 		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
+		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
 		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
 		ModelAndView modelAndView = new ModelAndView("car.images");
 		modelAndView.addObject("selectedBrand", selectedBrand);
+		modelAndView.addObject("cars", cars);
 		modelAndView.addObject("selectedCar", selectedCar);
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/brand/{brandName}/car/{vehicleName}/videos", method=RequestMethod.GET)
-	public ModelAndView showVideos(@PathVariable String brandName, @PathVariable String vehicleName){
-		System.out.println(brandName);
-		return new ModelAndView("videos");
+	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/videos", method=RequestMethod.GET)
+	public ModelAndView showVideos(@PathVariable String brandShortName, @PathVariable String carStandardName){
+		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
+		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
+		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
+		ModelAndView modelAndView = new ModelAndView("car.videos");
+		modelAndView.addObject("selectedBrand", selectedBrand);
+		modelAndView.addObject("cars", cars);
+		modelAndView.addObject("selectedCar", selectedCar);
+		return modelAndView;
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/trucks", method=RequestMethod.GET)
@@ -57,9 +65,11 @@ public class VehiclesController {
 	@RequestMapping(value="/brand/{brandShortName}/truck/{truckStandardName}/images", method=RequestMethod.GET)
 	public ModelAndView showTruckImages(@PathVariable String brandShortName, @PathVariable String truckStandardName){
 		TruckBrand selectedBrand = TruckBrand.findByShortName(brandShortName);
+		List<Vehicle> trucks = vehicleService.findTrucksByBrand(selectedBrand);
 		Vehicle selectedTruck = vehicleService.getTruck(selectedBrand, truckStandardName);
 		ModelAndView modelAndView = new ModelAndView("truck.images");
 		modelAndView.addObject("selectedBrand", selectedBrand);
+		modelAndView.addObject("trucks", trucks);
 		modelAndView.addObject("selectedTruck", selectedTruck);
 		return modelAndView;
 	}
@@ -79,9 +89,11 @@ public class VehiclesController {
 	@RequestMapping(value="/brand/{brandShortName}/boat/{boatStandardName}/images", method=RequestMethod.GET)
 	public ModelAndView showBoatImages(@PathVariable String brandShortName, @PathVariable String boatStandardName){
 		BoatBrand selectedBrand = BoatBrand.findByShortName(brandShortName);
+		List<Vehicle> boats = vehicleService.findBoatsByBrand(selectedBrand);
 		Vehicle selectedBoat = vehicleService.getBoat(selectedBrand, boatStandardName);
 		ModelAndView modelAndView = new ModelAndView("boat.images");
 		modelAndView.addObject("selectedBrand", selectedBrand);
+		modelAndView.addObject("boats", boats);
 		modelAndView.addObject("selectedBoat", selectedBoat);
 		return modelAndView;
 	}

@@ -1,6 +1,12 @@
 package com.rickyaut.gallery;
 
-public class Video {
+import java.io.Serializable;
+
+public class Video implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7999974676604685716L;
 	private String youtubeID;
 	private String description;
 

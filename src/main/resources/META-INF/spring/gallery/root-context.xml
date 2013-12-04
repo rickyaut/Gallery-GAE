@@ -40,6 +40,6 @@
     </security:authentication-manager>
 	 -->
 	 <bean id="vehicleService" class="com.rickyaut.gallery.VehicleServiceImpl"></bean>
-	 <bean id="jsonFactory" class="org.codehaus.jackson.JsonFactory"></bean>
 	 <bean id="jsonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper"></bean>
+	 <bean id="syncCache" class="com.google.appengine.api.memcache.MemcacheServiceFactory" factory-method="getMemcacheService"></bean>
 </beans>

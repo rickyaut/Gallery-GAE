@@ -9,12 +9,14 @@
 	<title>Spring Travel: Spring MVC and Web Flow Reference Application</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<c:url value="/css/bootstrap/bootstrap.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/css/bootstrap/simple-sidebar.css" />" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<c:url value="/css/bootstrap/bootstrap-theme.css" />" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<c:url value="/css/jquery-ui/jquery-ui.css" />" type="text/css" media="screen, projection" />
 
     <script type="text/javascript" src="<c:url value="/js/jquery-2.0.3.min.js" />"></script>
     <script type="text/javascript" src="<c:url value="/js/jquery-ui/jquery-ui.js" />"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap/bootstrap.min.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/js/gallery.js" />"></script>
 </head>
 <body>
 <c:set var="carBrands" value="<%=com.rickyaut.gallery.CarBrand.values()%>"/>
@@ -80,7 +82,7 @@
 	</div>
 	<hr />
 	<div id="footer">
-		<div class="container"></div>
+		<div class="container">Your access point: <%=request.getHeader("X-AppEngine-City") %>, <%=request.getHeader("X-AppEngine-Region") %>, <%=request.getHeader("X-AppEngine-Country") %></div>
 	</div>
 </div>
 </body>

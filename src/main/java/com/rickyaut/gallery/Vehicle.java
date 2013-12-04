@@ -1,8 +1,13 @@
 package com.rickyaut.gallery;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Vehicle {
+public class Vehicle implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8574618973769860977L;
 	private String name;
 	private String url;
 	private String thumbnailUrl;
