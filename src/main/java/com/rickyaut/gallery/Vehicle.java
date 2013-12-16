@@ -15,6 +15,7 @@ public class Vehicle implements Serializable{
 	private List<Image> exteriorImages;
 	private List<Image> interiorImages;
 	private List<Video> videos;
+	private List<Story> stories;
 
 	public String getName() {
 		return name;
@@ -71,4 +72,13 @@ public class Vehicle implements Serializable{
 	public void setVideos(List<Video> videos) {
 		this.videos = videos;
 	}
+
+	public List<Story> getStories() {
+		return stories;
+	}
+
+	public void setStories(List<Story> stories) {
+		this.stories = stories;
+	}
+
 }

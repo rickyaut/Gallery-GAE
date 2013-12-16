@@ -6,12 +6,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Spring Travel: Spring MVC and Web Flow Reference Application</title>
+	<title>${meta_title }</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="${meta_description }">
 	<link rel="stylesheet" href="<c:url value="/css/bootstrap/bootstrap.css" />" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<c:url value="/css/bootstrap/simple-sidebar.css" />" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<c:url value="/css/bootstrap/bootstrap-theme.css" />" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<c:url value="/css/jquery-ui/jquery-ui.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/css/application.css" />" type="text/css" media="screen, projection" />
 
     <script type="text/javascript" src="<c:url value="/js/jquery-2.0.3.min.js" />"></script>
     <script type="text/javascript" src="<c:url value="/js/jquery-ui/jquery-ui.js" />"></script>

@@ -28,8 +28,15 @@
 		<org.cloudfoundry-version>0.8.1</org.cloudfoundry-version>
 		<org.slf4j-version>1.6.1</org.slf4j-version>
 		<org.springframework-version>3.2.2.RELEASE</org.springframework-version>
+		<project.youtube.version>v3-rev79-1.17.0-rc</project.youtube.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>google-api-services</id>
+			<url>http://google-api-client-libraries.appspot.com/mavenrepo</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<!-- Compile/runtime dependencies -->
 		<dependency>
@@ -144,7 +151,7 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
-            
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -209,18 +216,44 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.3</version>
 		</dependency>
-        <dependency>
+		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
 			<version>3.2.1</version>
 		</dependency>
-                
-        <!-- @Inject -->
+
+		<!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
         <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtube</artifactId>
+            <version>${project.youtube.version}</version>
         </dependency>
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-youtube</artifactId>
+			<version>${project.youtube.version}</version>
+		</dependency>
+		<dependency>
+	      	<groupId>com.google.http-client</groupId>
+	      	<artifactId>google-http-client-jackson2</artifactId>
+	      	<version>1.17.0-rc</version>
+	    </dependency>
+		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+            
 	</dependencies>
 
 	<build>

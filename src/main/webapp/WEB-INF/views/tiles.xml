@@ -22,6 +22,9 @@
 	<definition name="car.videos" extends="standardLayout">
 		<put-attribute name="body" value="/WEB-INF/views/car.videos.jsp" />
 	</definition>
+	<definition name="car.stories" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/car.stories.jsp" />
+	</definition>
 		
 	<definition name="trucks" extends="standardLayout">
 		<put-attribute name="body" value="/WEB-INF/views/trucks.jsp" />

@@ -29,27 +29,16 @@
 			</ol>
 			<ul class="nav nav-tabs">
 			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/images">Photos</a></li>
-			  	<li class="active"><a href="javascript:;">Videos</a></li>
-			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/stories">Stories</a></li>
+			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/videos">Videos</a></li>
+			  	<li class="active"><a href="javascript:;">Stories</a></li>
 			</ul>
-			<div id="video-player">
-			<c:if test="${fn:length(selectedCar.videos)>0 }">
-				<%-- <iframe id="player" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${selectedCar.videos[0].youtubeID }" frameborder="0" allowfullscreen="true"/>--%>
-				<script type="text/javascript" src="/js/swfobject.js"></script>    
-				<div id="ytapiplayer">
-				    You need Flash player 8+ and JavaScript enabled to view this video.
+			<div id="stories">
+				<c:forEach items="${selectedCar.stories }" var="story" varStatus="status">
+				<div class="story">
+					<span class="title"><b>${story.title}</b></span>
+					<span class="pubdate">[<fmt:formatDate pattern="EEE MMM dd HH:mm yyyy" value="${story.date}" />]</span>
+					<div>${story.description}</div>
 				</div>
-				
-				<script type="text/javascript">
-					embedSWF("${selectedCar.videos[0].youtubeID }")
-				
-				</script>
-			</c:if> 
-			</div>
-			<h3><spring:message code="other.videos" arguments="${selectedBrand.shortName }, ${selectedCar.name }"/></h3>
-			<div id="video-thumbnails">
-				<c:forEach items="${selectedCar.videos }" var="video" varStatus="status">
-				<img src="${video.thumbnailURL }" alt="${video.title }" title="${video.title }" youtubeid="${video.youtubeID }"/>
 				</c:forEach>
 			</div>
 		</div>
