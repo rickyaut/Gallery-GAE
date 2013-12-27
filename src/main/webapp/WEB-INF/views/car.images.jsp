@@ -2,7 +2,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.Vehicle, com.rickyaut.gallery.Image, org.apache.commons.collections.CollectionUtils"%>
+<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.Vehicle, com.rickyaut.gallery.Image, org.apache.commons.collections.CollectionUtils, org.apache.commons.lang.StringUtils"%>
 <div id="wrapper">
 	<div id="sidebar-wrapper">
 	  	<ul class="sidebar-nav">
@@ -27,11 +27,14 @@
 			  <li><a href="/brand/${selectedBrand.shortName }/cars"><spring:message code="${selectedBrand.code }"/></a></li>
 			  <li class="active">${selectedCar.name }</li>
 			</ol>
-			<ul class="nav nav-tabs">
-			  	<li class="active"><a href="javascript:;">Photos</a></li>
-			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/videos">Videos</a></li>
-			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/stories">Stories</a></li>
-			</ul>
+			<div>
+				<ul class="nav nav-tabs">
+				  	<li class="active"><a href="javascript:;">Photos</a></li>
+				  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/videos">Videos</a></li>
+				  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/stories">Stories</a></li>
+				  	<li style="float:right"><%@include file="../includes/socialmedia.in.top.jsp" %></li>
+				</ul>
+			</div>
 			<%
 			List<Image> images = new ArrayList<Image>();
 			Vehicle car = (Vehicle)request.getAttribute("selectedCar");
@@ -46,11 +49,11 @@
 			}
 			pageContext.setAttribute("images", images);
 			%>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<div id="car-images-carousel" class="carousel slide" data-ride="carousel">
 		      <!-- Indicators -->
 		      <ol class="carousel-indicators">
 		      	<c:forEach items="${images }" var="image" varStatus="status">
-			        <li data-target="#myCarousel" data-slide-to="${status.index }" class="${status.index==0?'active':'' }"></li>
+			        <li data-target="#car-images-carousel" data-slide-to="${status.index }" class="${status.index==0?'active':'' }"></li>
 		      	</c:forEach>
 		      </ol>
 		      <div class="carousel-inner">
@@ -66,8 +69,8 @@
 			        </div>
 		        </c:forEach>
 		      </div>
-		      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-		      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+		      <a class="left carousel-control" href="#car-images-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		      <a class="right carousel-control" href="#car-images-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 		    </div>
 		</div>
 	</div>

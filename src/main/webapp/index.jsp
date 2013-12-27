@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta http-equiv="refresh" content="1;url=http://localhost:55556/home">
+<meta http-equiv="refresh" content="1;url=http://<%=request.getServerName() %><%=request.getServerPort()==80?"":":"+request.getServerPort() %>/home">
 <title>AllMotorsGallery - Welcome</title>
 </head>
 <body>

@@ -31,6 +31,7 @@
 			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/images">Photos</a></li>
 			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/videos">Videos</a></li>
 			  	<li class="active"><a href="javascript:;">Stories</a></li>
+			  	<li style="float:right"><%@include file="../includes/socialmedia.in.top.jsp" %></li>
 			</ul>
 			<div id="stories">
 				<c:forEach items="${selectedCar.stories }" var="story" varStatus="status">

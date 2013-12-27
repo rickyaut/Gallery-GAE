@@ -31,25 +31,30 @@
 			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/images">Photos</a></li>
 			  	<li class="active"><a href="javascript:;">Videos</a></li>
 			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/stories">Stories</a></li>
+			  	<li style="float:right"><%@include file="../includes/socialmedia.in.top.jsp" %></li>
 			</ul>
 			<div id="video-player">
 			<c:if test="${fn:length(selectedCar.videos)>0 }">
-				<%-- <iframe id="player" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${selectedCar.videos[0].youtubeID }" frameborder="0" allowfullscreen="true"/>--%>
-				<script type="text/javascript" src="/js/swfobject.js"></script>    
+				<iframe id="player" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/${selectedCar.videos[0].youtubeID }" frameborder="0" allowfullscreen="true"></iframe>
+				<%-- <script type="text/javascript" src="/js/swfobject.js"></script>    
 				<div id="ytapiplayer">
 				    You need Flash player 8+ and JavaScript enabled to view this video.
 				</div>
 				
 				<script type="text/javascript">
-					embedSWF("${selectedCar.videos[0].youtubeID }")
+					embedSWF("${param.youtubeID }")
 				
-				</script>
+				</script>--%>
 			</c:if> 
 			</div>
 			<h3><spring:message code="other.videos" arguments="${selectedBrand.shortName }, ${selectedCar.name }"/></h3>
 			<div id="video-thumbnails">
 				<c:forEach items="${selectedCar.videos }" var="video" varStatus="status">
-				<img src="${video.thumbnailURL }" alt="${video.title }" title="${video.title }" youtubeid="${video.youtubeID }"/>
+					<c:if test="${param.youtubeID ne video.youtubeID }">
+						<a href="video?youtubeID=${video.youtubeID }">
+							<img src="${video.thumbnailURL }" alt="${video.title }" title="${video.title }"/>
+						</a>
+					</c:if>
 				</c:forEach>
 			</div>
 		</div>

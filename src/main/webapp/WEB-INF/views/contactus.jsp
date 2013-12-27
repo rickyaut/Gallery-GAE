@@ -1,36 +1,30 @@
 <div>
-	<h1>Welcome to Spring Travel</h1>
+	<h1>Contact us</h1>
 	<p>
-	 	This sample demonstrates how to use Spring MVC and Spring Web Flow together with JavaServerPages (JSP) and Tiles.
+	 	Please fill the form, and we'll contact you ASAP.
 	 	<br />
 	</p>
-	<hr/>
-	<p>
-		The key features illustrated in this sample include:
-	</p>
-	<ul>
-		<li>A declarative navigation model enabling full browser button support and dynamic navigation rules</li>
-		<li>A fine-grained state management model, including support for ConversationScope and ViewScope</li>
-		<li>Modularization of web application functionality by domain use case, illustrating project structure best-practices</li>
-		<li>Spring Expression Language (SpEL) integration</li>
-		<li>Spring 3 formatting annotations @DateTimeFormat, @NumberFormat</li>
-		<li>Spring MVC custom namespace</li>
-		<li>Spring Security integration</li>
-		<li>Annotated POJO @Controllers for implementing RESTful user interactions.</li>
-		<li>Declarative page authoring with JSP, JSTL, and Spring MVC's form tag library</li>
-		<li>Page layout and composition with Apache Tiles</li>
-		<li>A JavaScript API for decorating HTML elements with behaviors such as Ajax, validation, and effects.</li>
-		<li>A grid layout with Blueprint CSS</li>
-		<li>Exception handling support across all layers of the application</li>
-		<li>SpringSource Tool Suite integration, with support for graphical flow modeling and visualization</li>
-	</ul>
-	<p>
-		<a href="hotels/search">Start your Spring Travel experience</a>
-	</p><%
-	Cookie cookie = new Cookie("username-test-view", "ethan");
-	cookie.setMaxAge(60*60);
-	cookie.setComment("testing user name cookie view");
-	cookie.setPath("/");
-	response.addCookie(cookie);
-	%>
+	<form action="/contact-us" method="post" class="contact-us" id="contact-us-form">
+		<div class="input-group">
+		  	<span class="input-group-addon">Your Name: </span>
+		  	<input type="text" class="form-control" placeholder="Name" name="name" required>
+		</div>
+		<div class="input-group">
+		  	<span class="input-group-addon">Phone: </span>
+		  	<input type="text" class="form-control" placeholder="Phone" name="phone" required>
+		</div>
+		<div class="input-group">
+		  	<span class="input-group-addon">eMail: </span>
+		  	<input type="email" class="form-control" placeholder="eMail" name="email" required>
+		</div>
+		<div class="input-group">
+		  	<span class="input-group-addon">Content: </span>
+		  	<textarea class="form-control" name="content" required></textarea>
+		</div>
+		<div class="input-group">
+			<button type="reset" class="btn btn-default">Reset</button>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</div>
+	</form>
+	<script type="text/javascript">$(function(){$("#contact-us-form").validate()})</script>
 </div>

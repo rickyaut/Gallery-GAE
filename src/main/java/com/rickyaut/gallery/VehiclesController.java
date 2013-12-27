@@ -2,27 +2,32 @@ package com.rickyaut.gallery;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class VehiclesController {
 	@Autowired
 	VehicleService vehicleService;
-	private void setMetaDataIntoMV(ModelAndView mv, String title, String description){
+	private void setMetaDataIntoMV(ModelAndView mv, String title, String description, String image){
 		mv.addObject("meta_title", "AllMotorsGallery - "+ title);
 		mv.addObject("meta_description", description);
+		if(StringUtils.isNotBlank(image)){
+			mv.addObject("ogImage", image);
+		}
 	}
 
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView showHomePage(){
 		ModelAndView modelAndView = new ModelAndView("index");
 		setMetaDataIntoMV(modelAndView, "Home", 
-				"Find car images/videos and useful stories in AllMotorsGallery");
+				"Find car images/videos and useful stories in AllMotorsGallery", null);
 		return modelAndView;
 	}
 	
@@ -37,7 +42,7 @@ public class VehiclesController {
 			descriptionBuf.append(car.getName()+", ");
 		}
 		setMetaDataIntoMV(modelAndView, selectedBrand.name(), 
-				descriptionBuf.toString());
+				descriptionBuf.toString(), null);
 		modelAndView.addObject("selectedBrand", selectedBrand);
 		modelAndView.addObject("cars", cars);
 		modelAndView.addObject("brands", brands);
@@ -51,7 +56,31 @@ public class VehiclesController {
 		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
 		ModelAndView modelAndView = new ModelAndView("car.images");
 		setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedCar.getName()), 
-				String.format("Display image collections of %s %s car", selectedBrand.name(), selectedCar.getName()));
+				String.format("Display image collections of %s %s car", selectedBrand.name(), selectedCar.getName()), null);
+		modelAndView.addObject("selectedBrand", selectedBrand);
+		modelAndView.addObject("cars", cars);
+		modelAndView.addObject("selectedCar", selectedCar);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/video", method=RequestMethod.GET)
+	public ModelAndView playCarVideo(@PathVariable String brandShortName, @PathVariable String carStandardName, @RequestParam("youtubeID") String youtubeID){
+		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
+		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
+		if(selectedCar.getVideos()==null||selectedCar.getVideos().isEmpty()){
+			List<Video> videos = vehicleService.findCarYoutubeVideos(selectedBrand, carStandardName);
+			selectedCar.setVideos(videos);
+		}
+		Video selectedVideo = null;
+		for(Video video: selectedCar.getVideos()){
+			if(StringUtils.equals(video.getYoutubeID(), youtubeID)){
+				selectedVideo = video;
+			}
+		}
+		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
+		ModelAndView modelAndView = new ModelAndView("car.videos");
+		setMetaDataIntoMV(modelAndView, String.format("%s %s Videos", selectedBrand.name(), selectedCar.getName()),  
+				String.format("Display popular youtube videos about %s %s car", selectedBrand.name(), selectedCar.getName()), selectedVideo==null?"":selectedVideo.getThumbnailURL());
 		modelAndView.addObject("selectedBrand", selectedBrand);
 		modelAndView.addObject("cars", cars);
 		modelAndView.addObject("selectedCar", selectedCar);
@@ -59,19 +88,12 @@ public class VehiclesController {
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/videos", method=RequestMethod.GET)
-	public ModelAndView showCarVideos(@PathVariable String brandShortName, @PathVariable String carStandardName){
+	public String showCarVideos(@PathVariable String brandShortName, @PathVariable String carStandardName){
 		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
-		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
-		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
 		List<Video> videos = vehicleService.findCarYoutubeVideos(selectedBrand, carStandardName);
+		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
 		selectedCar.setVideos(videos);
-		ModelAndView modelAndView = new ModelAndView("car.videos");
-		setMetaDataIntoMV(modelAndView, String.format("%s %s Videos", selectedBrand.name(), selectedCar.getName()),  
-				String.format("Display popular youtube videos about %s %s car", selectedBrand.name(), selectedCar.getName()));
-		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("cars", cars);
-		modelAndView.addObject("selectedCar", selectedCar);
-		return modelAndView;
+		return "redirect:/brand/"+brandShortName+"/car/"+carStandardName+"/video?youtubeID="+videos.get(0).getYoutubeID();
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/stories", method=RequestMethod.GET)
@@ -83,7 +105,7 @@ public class VehiclesController {
 		selectedCar.setStories(stories);
 		ModelAndView modelAndView = new ModelAndView("car.stories");
 		setMetaDataIntoMV(modelAndView, String.format("%s %s stories", selectedBrand.name(), selectedCar.getName()),  
-				String.format("Display useful stories about %s %s", selectedBrand.name(), selectedCar.getName()));
+				String.format("Display useful stories about %s %s", selectedBrand.name(), selectedCar.getName()), null);
 		modelAndView.addObject("selectedBrand", selectedBrand);
 		modelAndView.addObject("cars", cars);
 		modelAndView.addObject("selectedCar", selectedCar);
@@ -100,8 +122,7 @@ public class VehiclesController {
 		for(Vehicle truck: trucks){
 			descriptionBuf.append(truck.getName()+", ");
 		}
-		setMetaDataIntoMV(modelAndView, selectedBrand.name(), 
-				descriptionBuf.toString());
+		setMetaDataIntoMV(modelAndView, selectedBrand.name(), descriptionBuf.toString(), null);
 		modelAndView.addObject("selectedBrand", selectedBrand);
 		modelAndView.addObject("trucks", trucks);
 		modelAndView.addObject("brands", brands);
@@ -115,7 +136,7 @@ public class VehiclesController {
 		Vehicle selectedTruck = vehicleService.getTruck(selectedBrand, truckStandardName);
 		ModelAndView modelAndView = new ModelAndView("truck.images");
 		setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedTruck.getName()), 
-				String.format("Display image collections of %s %s truck", selectedBrand.name(), selectedTruck.getName()));
+				String.format("Display image collections of %s %s truck", selectedBrand.name(), selectedTruck.getName()), null);
 		modelAndView.addObject("selectedBrand", selectedBrand);
 		modelAndView.addObject("trucks", trucks);
 		modelAndView.addObject("selectedTruck", selectedTruck);
@@ -132,8 +153,7 @@ public class VehiclesController {
 		for(Vehicle truck: boats){
 			descriptionBuf.append(truck.getName()+", ");
 		}
-		setMetaDataIntoMV(modelAndView, selectedBrand.name(), 
-				descriptionBuf.toString());
+		setMetaDataIntoMV(modelAndView, selectedBrand.name(), descriptionBuf.toString(), null);
 		modelAndView.addObject("selectedBrand", selectedBrand);
 		modelAndView.addObject("boats", boats);
 		modelAndView.addObject("brands", brands);
@@ -147,7 +167,7 @@ public class VehiclesController {
 		Vehicle selectedBoat = vehicleService.getBoat(selectedBrand, boatStandardName);
 		ModelAndView modelAndView = new ModelAndView("boat.images");
 		setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedBoat.getName()), 
-				String.format("Display image collections of %s %s boat", selectedBrand.name(), selectedBoat.getName()));
+				String.format("Display image collections of %s %s boat", selectedBrand.name(), selectedBoat.getName()), null);
 		modelAndView.addObject("selectedBrand", selectedBrand);
 		modelAndView.addObject("boats", boats);
 		modelAndView.addObject("selectedBoat", selectedBoat);

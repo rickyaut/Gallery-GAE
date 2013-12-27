@@ -66,5 +66,7 @@
     <!-- Configures transaction management around @Transactional components -->
 
     <!-- Imports the application controllers that process client requests -->
+    <!-- 
     <mvc:view-controller path="/contact-us" view-name="contactus"/>
+     -->
 </beans>

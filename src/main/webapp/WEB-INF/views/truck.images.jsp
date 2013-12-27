@@ -39,11 +39,11 @@
 			}
 			pageContext.setAttribute("images", images);
 			%>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<div id="truck-images-carousel" class="carousel slide" data-ride="carousel">
 		      <!-- Indicators -->
 		      <ol class="carousel-indicators">
 		      	<c:forEach items="${images }" var="image" varStatus="status">
-			        <li data-target="#myCarousel" data-slide-to="${status.index }" class="${status.index==0?'active':'' }"></li>
+			        <li data-target="#truck-images-carousel" data-slide-to="${status.index }" class="${status.index==0?'active':'' }"></li>
 		      	</c:forEach>
 		      </ol>
 		      <div class="carousel-inner">
@@ -59,8 +59,8 @@
 			        </div>
 		        </c:forEach>
 		      </div>
-		      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-		      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+		      <a class="left carousel-control" href="#truck-images-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		      <a class="right carousel-control" href="#truck-images-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 		    </div>
 		</div>
 	</div>

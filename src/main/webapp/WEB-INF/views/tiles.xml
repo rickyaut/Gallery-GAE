@@ -13,6 +13,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/contactus.jsp" />
 	</definition>
 		
+	<definition name="contactus.result" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/contactus.result.jsp" />
+	</definition>
+		
 	<definition name="cars" extends="standardLayout">
 		<put-attribute name="body" value="/WEB-INF/views/cars.jsp" />
 	</definition>

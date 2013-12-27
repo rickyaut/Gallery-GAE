@@ -86,43 +86,48 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 	
 	private List<Video> searchYoutube(String term) throws IOException {
-		YouTube youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), new HttpRequestInitializer() {
-					public void initialize(HttpRequest request)
-							throws IOException {
-					}
-				}).setApplicationName("gallery").build();
+		if(syncCache.get("youtube - "+term)==null){
+			YouTube youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), new HttpRequestInitializer() {
+				public void initialize(HttpRequest request)
+						throws IOException {
+				}
+			}).setApplicationName("gallery").build();
 
-		YouTube.Search.List search = youtube.search().list("id,snippet");
-		/*
-		 * It is important to set your developer key from the Google Developer
-		 * Console for non-authenticated requests (found under the API Access
-		 * tab at this link: code.google.com/apis/). This is good practice and
-		 * increases your quota.
-		 */
-		search.setKey("AIzaSyBlMiJvaDr-xrpcVH-xOTKP0QaakXJsujI");
-		search.setQ(term);
-
-		/*
-		 * We are only searching for videos (not playlists or channels). If we
-		 * were searching for more, we would add them as a string like this:
-		 * "video,playlist,channel".
-		 */
-		search.setType("video");
-		/*
-		 * This method reduces the info returned to only the fields we need. It
-		 * makes things more efficient, because we are transmitting less data.
-		 */
-		search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)");
-		search.setMaxResults(20L);
-		SearchListResponse searchResponse = search.execute();
-
-		List<Video> videos = new ArrayList<Video>();
-		List<SearchResult> searchResultList = searchResponse.getItems();
-		for(SearchResult result: searchResultList){
-			Video video = new Video(result.getId().getVideoId(), result.getSnippet().getTitle(), result.getSnippet().getThumbnails().getDefault().getUrl());
-			videos.add(video);
+			YouTube.Search.List search = youtube.search().list("id,snippet");
+			/*
+			 * It is important to set your developer key from the Google Developer
+			 * Console for non-authenticated requests (found under the API Access
+			 * tab at this link: code.google.com/apis/). This is good practice and
+			 * increases your quota.
+			 */
+			search.setKey("AIzaSyBlMiJvaDr-xrpcVH-xOTKP0QaakXJsujI");
+			search.setQ(term);
+		
+			/*
+			 * We are only searching for videos (not playlists or channels). If we
+			 * were searching for more, we would add them as a string like this:
+			 * "video,playlist,channel".
+			 */
+			search.setType("video");
+			/*
+			 * This method reduces the info returned to only the fields we need. It
+			 * makes things more efficient, because we are transmitting less data.
+			 */
+			search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)");
+			search.setMaxResults(20L);
+			SearchListResponse searchResponse = search.execute();
+		
+			List<Video> videos = new ArrayList<Video>();
+			List<SearchResult> searchResultList = searchResponse.getItems();
+			for(SearchResult result: searchResultList){
+				Video video = new Video(result.getId().getVideoId(), result.getSnippet().getTitle(), result.getSnippet().getThumbnails().getDefault().getUrl());
+				videos.add(video);
+			}
+			syncCache.put("youtube - "+term, videos);
+			return videos;
+		}else{
+			return (List<Video>)syncCache.get("youtube - "+term);
 		}
-		return videos;
 	}
 
 	@Override
@@ -144,16 +149,6 @@ public class VehicleServiceImpl implements VehicleService {
 		return stories;
 	}
 
-	private String getCharacterData(XMLEvent event, XMLEventReader eventReader)
-			throws XMLStreamException {
-		String result = "";
-		event = eventReader.nextEvent();
-		if (event instanceof Characters) {
-			result = event.asCharacters().getData();
-		}
-		return result;
-	}
-
 	@Override
 	public List<Vehicle> findTrucksByBrand(TruckBrand brand) {
 		String dataFileName = "json/truck/"+brand.getDataFileName();
@@ -161,8 +156,7 @@ public class VehicleServiceImpl implements VehicleService {
 		if(vehicles == null){
 			URL url = getClass().getClassLoader().getResource(dataFileName);
 			try {
-				Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
-				vehicles = Arrays.asList(vehicleArray);
+				vehicles = jsonObjectMapper.readValue(url, Maker.class).getVehicles();
 				syncCache.put(dataFileName, vehicles);
 			} catch (JsonProcessingException e) {
 				logger.log(Level.SEVERE, e.getMessage(), e);
@@ -192,8 +186,7 @@ public class VehicleServiceImpl implements VehicleService {
 		if(vehicles == null){
 			URL url = getClass().getClassLoader().getResource(dataFileName);
 			try {
-				Vehicle[] vehicleArray = jsonObjectMapper.readValue(url, Vehicle[].class);
-				vehicles = Arrays.asList(vehicleArray);
+				vehicles = jsonObjectMapper.readValue(url, Maker.class).getVehicles();
 				syncCache.put(dataFileName, vehicles);
 			} catch (JsonProcessingException e) {
 				logger.log(Level.SEVERE, e.getMessage(), e);

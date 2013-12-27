@@ -1,0 +1,537 @@
+{
+    "lastUpdate": "2013-12-21",
+    "vehicles": [
+        {
+            "name": "Accent",
+            "url": "https://www.hyundaiusa.com/accent/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/2013_accent_gls_n.png",
+            "images": [
+                {
+                    "description": "2013 ACCENT IN MARATHON BLUE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-07.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-07.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN IRONMAN SILVER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-21.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-21.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN MARATHON BLUE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-29.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-29.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN ULTRA BLACK",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/thumb/accent-hyundai-2013-03.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-03.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN BLACK INTERIOR AVAILABLE STEERING-WHEEL-MOUNTED AUDIO AND CRUISE CONTROLS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-43.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-43.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN BLACK INTERIOR",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-37.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-37.jpg"
+                },
+                {
+                    "description": "2013 ACCENT WITH STANDARD POWER WINDOWS, DOOR LOCKS AND MIRRORS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-41.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-41.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN GRAY INTERIOR IPOD<sup>\u00AE</sup>/USB AND AUXILIARY INPUT JACKS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-42.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-42.jpg"
+                },
+                {
+                    "description": "2013 ACCENT WITH STANDARD AIR CONDITIONING",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-40.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-40.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN IRONMAN SILVER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-04.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-04.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN MARATHON BLUE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-18.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-18.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN MARATHON BLUE AVAILABLE FOG LIGHTS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-09.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-09.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN BLACK INTERIOR AVAILABLE STEERING-WHEEL-MOUNTED AUDIO AND CRUISE ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-14.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-14.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN GRAY INTERIOR 60/40 SPLIT FOLD-DOWN REAR SEATBACK ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-20.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-20.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN GRAY INTERIOR SUNGLASS HOLDER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-31.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-31.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN GRAY INTERIOR ADJUSTABLE ACTIVE FRONT HEAD RESTRAINTS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-45.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-45.jpg"
+                },
+                {
+                    "description": "2013 ACCENT WITH AVAILABLE ACTIVE ECO SYSTEM",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-35.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-35.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN BOSTON RED",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-02.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-02.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN MARATHON BLUE FRONT HEADLIGHT",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-08.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-08.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN IRONMAN SILVER AVAILABLE REAR DISC BRAKES",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-10.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-10.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN GRAY INTERIOR",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-24.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-24.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN IRONMAN SILVER 5-DOOR WITH 47.5 CU. FT. OF CARGO SPACE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-28.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-28.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN GRAY INTERIOR AVAILABLE SLIDING CENTER ARMREST",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-19.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-19.jpg"
+                },
+                {
+                    "description": "2013 ACCENT IN BLACK INTERIOR AVAILABLE 6-SPEED AUTOMATIC TRANSMISSION WITH SHIFTRONIC\u00AE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-25.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-25.jpg"
+                },
+                {
+                    "description": "2013 ACCENT WITH 6-SPEED MANUAL TRANSMISSION",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Thumb/accent-hyundai-2013-38.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Accent/2013/mayupdate/Expand/accent-hyundai-2013-38.jpg"
+                }
+            ]
+        },
+        {
+            "name": "Elantra",
+            "url": "https://www.hyundaiusa.com/elantra/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/2013_elantra_n.png",
+            "images": []
+        },
+        {
+            "name": "Elantra Coupe",
+            "url": "https://www.hyundaiusa.com/elantra-coupe/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/2013_elantra_coupe_n.png",
+            "images": []
+        },
+        {
+            "name": "Elantra GT",
+            "url": "https://www.hyundaiusa.com/elantra-gt/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2014/2014_elantra_gt_n.png",
+            "images": []
+        },
+        {
+            "name": "Veloster",
+            "url": "https://www.hyundaiusa.com/veloster/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/2013_veloster_n.png",
+            "images": []
+        },
+        {
+            "name": "Sonata",
+            "url": "https://www.hyundaiusa.com/sonata/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2012_New/2012_sonata_n.png",
+            "images": [
+                {
+                    "description": "2014 SONATA LIMITED IN HARBOR GRAY METALLIC",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-01.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-01.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED IN HARBOR GRAY METALLIC",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-02.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-02.jpg"
+                },
+                {
+                    "description": "2014 SONATA HYBRID LIMITED IN BLUE SKY METALLIC",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-07.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-07.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED IN PEARL WHITE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-08.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-08.jpg"
+                },
+                {
+                    "description": "2014 SONATA SE IN RADIANT SILVER   ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-13.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-13.jpg"
+                },
+                {
+                    "description": "2014 SONATA GLS IN HARBOR GRAY METALLIC",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-14.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-14.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED WITH CAMEL LEATHER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-19.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-19.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED WITH CAMEL LEATHER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-20.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-20.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED REAR-SEAT VENTS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-26.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-26.jpg"
+                },
+                {
+                    "description": "2014 SONATA PROXIMITY KEY ENTRY",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-27.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-27.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED WITH PANORAMIC SUNROOF ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-03.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-03.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED 2.0T IN HARBOR GRAY METALLIC",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-04.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-04.jpg"
+                },
+                {
+                    "description": "2014 SONATA SE IN PHANTOM BLACK METALLIC",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-09.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-09.jpg"
+                },
+                {
+                    "description": "2014 SONATA TWO-TONE CHROME GRILLE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-10.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-10.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED WITH PANORAMIC SUNROOF ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-15.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-15.jpg"
+                },
+                {
+                    "description": "2014 SONATA REARVIEW CAMERA  ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-23.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-23.jpg"
+                },
+                {
+                    "description": "2014 SONATA WITH ACTIVE ECO SYSTEM",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-21.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-21.jpg"
+                },
+                {
+                    "description": "2014 SONATA WITH 400-WATT INFINITY\u00AE PREMIUM AUDIO",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-16.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-16.jpg"
+                },
+                {
+                    "description": "2014 SONATA PROXIMITY KEY WITH PUSH BUTTON START",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-28.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-28.jpg"
+                },
+                {
+                    "description": "2014 SONATA 4-WHEEL DISC BRAKES",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-29.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/expand/sonata-hyundai-2014-29.jpg"
+                },
+                {
+                    "description": "2014 SONATA SE WITH CHROME-TIPPED DUAL EXHAUST",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-05.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-05.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED 2.0T AND 2014 SONATA HYBRID LIMITED",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-06.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-06.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED WITH HID XENON HEADLIGHTS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-11.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-11.jpg"
+                },
+                {
+                    "description": "2014 SONATA SE IN VENETIAN RED ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-12.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-12.jpg"
+                },
+                {
+                    "description": "2014 SONATA WITH BLIND SPOT DETECTION (BSD)",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-17.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-17.jpg"
+                },
+                {
+                    "description": "2014 SONATA LIMITED SIDE MIRRORS WITH TURN-SIGNAL INDICATORS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-24.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-24.jpg"
+                },
+                {
+                    "description": "2014 SONATA 8-INCH TOUCHSCREEN WITH NAVIGATION",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-22.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-22.jpg"
+                },
+                {
+                    "description": "2014 SONATA WITH iPod<sup>\u00AE</sup>/USB AND AUXILIARY INPUT JACKS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-25.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-25.jpg"
+                },
+                {
+                    "description": "2014 SONATA 2.4L GDI 4-CYLINDER ENGINE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-30.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-30.jpg"
+                },
+                {
+                    "description": "2014 SONATA 2.0T GDI ENGINE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/thumb/sonata-hyundai-2014-31.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Sonata/2014/Expand/sonata-hyundai-2014-31.jpg"
+                }
+            ]
+        },
+        {
+            "name": "Azera",
+            "url": "https://www.hyundaiusa.com/azera/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2012_New/2012_azera_n.png",
+            "images": []
+        },
+        {
+            "name": "Tucson",
+            "url": "https://www.hyundaiusa.com/tucson/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2014/2014-tucson_n.png",
+            "images": []
+        },
+        {
+            "name": "Santa Fe Sport",
+            "url": "https://www.hyundaiusa.com/santa-fe-sport/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/vnav-SFsport.png",
+            "images": []
+        },
+        {
+            "name": "Santa Fe",
+            "url": "https://www.hyundaiusa.com/santa-fe/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/vnav-SFlwb.png",
+            "images": [
+                {
+                    "description": "2013 SANTA FE LIMITED IN HAMPTON GREEN PEARL",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-01.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-01.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN HAMPTON GREEN PEARL",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-02.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-02.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN HAMPTON GREEN PEARL",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-07.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-07.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN IRON FROST",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-08.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-08.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN CIRCUIT SILVER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-13.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-13.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE GLS IN CIRCUIT SILVER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-14.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-14.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE GLS 40/20/40 SPLIT-FOLDING SECOND ROW",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-01.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-01.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED CAPTAIN'S CHAIR",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-02.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-02.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED AVAILABLE 8-INCH TOUCHSCREEN",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-07.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-07.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE STEERING-WHEEL-MOUNTED CRUISE CONTROL",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-08.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-08.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE 12-VOLT OUTLETS",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-13.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-13.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE GLS 40/20/40 SPLIT-FOLDING SECOND ROW",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-14.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-14.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN HAMPTON GREEN PEARL",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-03.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-03.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN HAMPTON GREEN PEARL",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-04.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-04.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN IRON FROST",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-09.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-09.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN IRON FROST",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-10.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-10.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN FROSTED MOCHA",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-15.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-15.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN CIRCUIT SILVER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-16.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-16.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED AVAILABLE 8-INCH TOUCHSCREEN",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-03.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-03.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE  BLUETOOTH<sup>\u00AE</sup> HANDS-FREE PHONE SYSTEM ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-04.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-04.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE 50/50 SPLIT-FOLDING 3RD-ROW BENCH SEAT",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-09.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-09.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE GLS 7-PASSENGER ",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-10.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-10.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE 3.3L GDI V6 ENGINE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-15.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-15.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED POWER REAR TAILGATE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-16.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-16.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED WITH POWER REAR TAILGATE",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-05.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-05.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN HAMPTON GREEN PEARL",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-06.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-06.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN IRON FROST",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-11.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-11.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN CIRCUIT SILVER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-12.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-12.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED IN CIRCUIT SILVER",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-17.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-17.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED AVAILABLE PANORAMIC SUNROOF",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-ext-156x124-18.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-ext-800x450-18.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED CAPTAIN'S CHAIR",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-05.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-05.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED AVAILABLE PANORAMIC SUNROOF",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-06.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-06.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE AVAILABLE  8-INCH TOUCHSCREEN WITH AVAILABLE NAVIGATION",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-11.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-11.jpg"
+                },
+                {
+                    "description": "2013 SANTA FE LIMITED 115-VOLT POWER OUTLET",
+                    "thumbnailUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/thumb/santa-fe-hyundai-2013-gallery-int-156x124-12.jpg",
+                    "imageUrl": "https://www.hyundaiusa.com/images/HyundaiUSA/Vehicles/gallery/Santa%20Fe/2014/june_update/expand/santa-fe-hyundai-2013-gallery-int-800x450-12.jpg"
+                }
+            ]
+        },
+        {
+            "name": "Genesis Coupe",
+            "url": "https://www.hyundaiusa.com/genesis-coupe/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/2013_genesis_coupe_n.png",
+            "images": []
+        },
+        {
+            "name": "Genesis",
+            "url": "https://www.hyundaiusa.com/genesis/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2014/vertical-nav-2014-genesis.png",
+            "images": []
+        },
+        {
+            "name": "Equus",
+            "url": "https://www.hyundaiusa.com/equus/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2014/2014_equus_n.png",
+            "images": []
+        },
+        {
+            "name": "Sonata Hybrid",
+            "url": "https://www.hyundaiusa.com/sonata-hybrid/",
+            "thumbnailUrl": "https://www.hyundaiusa.com/images/navigation/vehicles/MY/2013_New/2013_yf_hybrid_n.png",
+            "images": []
+        }
+    ]
+}

@@ -3,7 +3,7 @@ $(function(){
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });*/
-	$("#recent-news-list a").click(function(e){
+	$("#stories a").click(function(e){
 		window.open($(e.currentTarget).attr("href"), "news-wnd");
 		return false;
 	})
