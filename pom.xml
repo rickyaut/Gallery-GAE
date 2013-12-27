@@ -291,6 +291,11 @@
 				<version>${appengine.target.version}</version>
 				<configuration>
 					<port>55556</port>
+					<jvmFlags>
+			            <jvmFlag>-Xdebug</jvmFlag>
+			            <jvmFlag>-Xrunjdwp:transport=dt_socket,address=1044,server=y,suspend=y
+			            </jvmFlag>
+			        </jvmFlags>
 				</configuration>
 			</plugin>
 		</plugins>

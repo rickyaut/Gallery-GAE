@@ -1,7 +1,7 @@
 App Engine Java Guestbook
 Copyright (C) 2010-2012 Google Inc.
 
-## Sample guestbook for use with App Engine Java.
+## vehicle image/video/story gallery with App Engine Java.
 
 Requires [Apache Maven](http://maven.apache.org) 3.0 or greater, and JDK 6+ in order to run.
 
@@ -13,9 +13,15 @@ Building will run the tests, but to explicitly run tests you can use the test ta
 
     mvn test
 
-To start the app, use the [App Engine Maven Plugin](http://code.google.com/p/appengine-maven-plugin/) that is already included in this demo.  Just run the command.
+To start the app locally, use the [App Engine Maven Plugin](http://code.google.com/p/appengine-maven-plugin/) that is already included in this demo.  Just run the command.
 
     mvn appengine:devserver
+    
+To access local environment, use the url(port number configured in pom.xml)
+    
+    http://localhost:55556
+    
+To debug in eclipse, start "Remote Java Application" and connect to 1044 port(configured in pom.xml)
 
 For further information, consult the [Java App Engine](https://developers.google.com/appengine/docs/java/overview) documentation.
 
