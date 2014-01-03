@@ -2,7 +2,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.Vehicle, com.rickyaut.gallery.Image, org.apache.commons.collections.CollectionUtils"%>
+<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.*, org.apache.commons.collections.CollectionUtils"%>
 <div id="wrapper">
 	<div id="sidebar-wrapper">
 	  	<ul class="sidebar-nav">
@@ -10,7 +10,9 @@
 	    	<c:forEach items="${cars }" var="car">
 	    		<li><c:choose>
 		    	<c:when test="${car.name ne selectedCar.name }">
-				    <a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(car.name), ' ', '-')}/images">${car.name }</a>
+					<c:set var="carName">${fn:toLowerCase(car.name)}</c:set>
+					<c:set var="carName"><%=GalleryUtils.toStandardName(pageContext.getAttribute("carName").toString()) %></c:set>
+				    <a href="/brand/${selectedBrand.shortName }/car/${carName}/videos">${car.name }</a>
 		    	</c:when>
 		    	<c:otherwise>
 				    ${car.name }
@@ -28,9 +30,11 @@
 			  <li class="active">${selectedCar.name }</li>
 			</ol>
 			<ul class="nav nav-tabs">
-			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/images">Photos</a></li>
+				<c:set var="carName">${fn:toLowerCase(selectedCar.name)}</c:set>
+				<c:set var="carName"><%=GalleryUtils.toStandardName(pageContext.getAttribute("carName").toString()) %></c:set>
+			  	<li><a href="/brand/${selectedBrand.shortName }/car/${carName}/images">Photos</a></li>
 			  	<li class="active"><a href="javascript:;">Videos</a></li>
-			  	<li><a href="/brand/${selectedBrand.shortName }/car/${fn:replace(fn:toLowerCase(selectedCar.name), ' ', '-')}/stories">Stories</a></li>
+			  	<li><a href="/brand/${selectedBrand.shortName }/car/${carName}/stories">Stories</a></li>
 			  	<li style="float:right"><%@include file="../includes/socialmedia.in.top.jsp" %></li>
 			</ul>
 			<div id="video-player">

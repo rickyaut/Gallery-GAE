@@ -10,12 +10,13 @@ public class Video implements Serializable{
 	private String youtubeID;
 	private String title;
 	private String thumbnailURL;
+	private String description;
 
 	public Video() {
 		super();
 	}
 
-	public Video(String youtubeID, String title, String thumbnailURL) {
+	public Video(String youtubeID, String title, String description, String thumbnailURL) {
 		this();
 		this.youtubeID = youtubeID;
 		this.title = title;
@@ -36,6 +37,14 @@ public class Video implements Serializable{
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getThumbnailURL() {

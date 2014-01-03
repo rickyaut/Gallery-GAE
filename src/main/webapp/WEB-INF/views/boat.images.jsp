@@ -2,7 +2,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.Vehicle, com.rickyaut.gallery.Image, org.apache.commons.collections.CollectionUtils"%>
+<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.*, org.apache.commons.collections.CollectionUtils"%>
 <div id="wrapper">
 	<div id="sidebar-wrapper">
 	  	<ul class="sidebar-nav">
@@ -10,7 +10,9 @@
 	    	<c:forEach items="${boats }" var="boat">
 	    		<li><c:choose>
 		    	<c:when test="${boat.name ne selectedBoat.name }">
-				    <a href="/brand/${selectedBrand.shortName }/boat/${fn:replace(fn:toLowerCase(boat.name), ' ', '-')}/images">${boat.name }</a>
+					<c:set var="boatName">${fn:toLowerCase(boat.name)}</c:set>
+					<c:set var="boatName"><%=GalleryUtils.toStandardName(pageContext.getAttribute("boatName").toString()) %></c:set>
+				    <a href="/brand/${selectedBrand.shortName }/boat/${boatName}/images">${boat.name }</a>
 		    	</c:when>
 		    	<c:otherwise>
 				    ${boat.name }

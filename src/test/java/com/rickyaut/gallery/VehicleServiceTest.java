@@ -68,7 +68,7 @@ public class VehicleServiceTest {
 		 * increases your quota.
 		 */
 		search.setKey("AIzaSyBlMiJvaDr-xrpcVH-xOTKP0QaakXJsujI");
-		search.setQ("holden cruze");
+		search.setQ("toyota cruze");
 
 		/*
 		 * We are only searching for videos (not playlists or channels). If we

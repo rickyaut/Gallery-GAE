@@ -63,7 +63,7 @@ public class VehicleServiceImpl implements VehicleService {
 	public Vehicle getCar(CarBrand brand, String vehicleStandardName) {
 		List<Vehicle> vehicles = findCarsByBrand(brand);
 		for(Vehicle vehicle: vehicles){
-			String standardName = vehicle.getName().toLowerCase().replaceAll(" ", "-");
+			String standardName = GalleryUtils.toStandardName(vehicle.getName());
 			if(StringUtils.equals(standardName, vehicleStandardName)){
 				return vehicle;
 			}
@@ -120,7 +120,7 @@ public class VehicleServiceImpl implements VehicleService {
 			List<Video> videos = new ArrayList<Video>();
 			List<SearchResult> searchResultList = searchResponse.getItems();
 			for(SearchResult result: searchResultList){
-				Video video = new Video(result.getId().getVideoId(), result.getSnippet().getTitle(), result.getSnippet().getThumbnails().getDefault().getUrl());
+				Video video = new Video(result.getId().getVideoId(), result.getSnippet().getTitle(), null, result.getSnippet().getThumbnails().getDefault().getUrl());
 				videos.add(video);
 			}
 			syncCache.put("youtube - "+term, videos);
@@ -171,7 +171,7 @@ public class VehicleServiceImpl implements VehicleService {
 	public Vehicle getTruck(TruckBrand brand, String truckStandardName) {
 		List<Vehicle> vehicles = findTrucksByBrand(brand);
 		for(Vehicle vehicle: vehicles){
-			String standardName = vehicle.getName().toLowerCase().replaceAll(" ", "-");
+			String standardName = GalleryUtils.toStandardName(vehicle.getName());
 			if(StringUtils.equals(standardName, truckStandardName)){
 				return vehicle;
 			}
@@ -201,7 +201,7 @@ public class VehicleServiceImpl implements VehicleService {
 	public Vehicle getBoat(BoatBrand brand, String boatStandardName) {
 		List<Vehicle> vehicles = findBoatsByBrand(brand);
 		for(Vehicle vehicle: vehicles){
-			String standardName = vehicle.getName().toLowerCase().replaceAll(" ", "-");
+			String standardName = GalleryUtils.toStandardName(vehicle.getName());
 			if(StringUtils.equals(standardName, boatStandardName)){
 				return vehicle;
 			}

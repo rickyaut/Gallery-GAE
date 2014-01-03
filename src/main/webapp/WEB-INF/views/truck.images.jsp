@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.Vehicle, com.rickyaut.gallery.Image, org.apache.commons.collections.CollectionUtils"%>
+<%@ page import="java.util.List, java.util.ArrayList, com.rickyaut.gallery.*, org.apache.commons.collections.CollectionUtils"%>
 <div id="wrapper">
 	<div id="sidebar-wrapper">
 	  	<ul class="sidebar-nav">
@@ -9,7 +9,9 @@
 	    	<c:forEach items="${trucks }" var="truck">
 	    		<li><c:choose>
 		    	<c:when test="${truck.name ne selectedTruck.name }">
-				    <a href="/brand/${selectedBrand.shortName }/truck/${fn:replace(fn:toLowerCase(truck.name), ' ', '-')}/images">${truck.name }</a>
+					<c:set var="truckName">${fn:toLowerCase(truck.name)}</c:set>
+					<c:set var="truckName"><%=GalleryUtils.toStandardName(pageContext.getAttribute("truckName").toString()) %></c:set>
+				    <a href="/brand/${selectedBrand.shortName }/truck/${truckName}/images">${truck.name }</a>
 		    	</c:when>
 		    	<c:otherwise>
 				    ${truck.name }
