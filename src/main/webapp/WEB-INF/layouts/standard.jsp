@@ -33,10 +33,13 @@
     <script type="text/javascript" src="<c:url value="/js/bootstrap/bootstrap.min.js" />"></script>
     <script type="text/javascript" src="<c:url value="/js/gallery.js" />"></script>
 <%@include file="../includes/google.analytics.jsp" %>
+<%@include file="../includes/google.cse.jsp" %>
 </head>
 <body>
 <%@include file="../includes/facebook.sdk.jsp" %>
-	<div class="container"><div class="page-header"><img src="<c:url value="/images/banner.png" />"/></div></div>
+	<div class="container"><div class="page-header">
+		<div id="gsc-searchbox"><gcse:searchbox-only resultsUrl="/search"></gcse:searchbox-only></div>
+	</div></div>
 <div class="container">
 	<div class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">

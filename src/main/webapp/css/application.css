@@ -1,5 +1,20 @@
 .page-header{
-	overflow: hidden;
+	background-image:url('/images/banner.png');
+	height: 131px;
+}
+.page-header #gsc-searchbox{
+	width: 300px;
+	float: right;
+	right: 5px;
+	top: 100px;
+	position: relative;
+}
+td.gsc-search-button{
+	display:none;
+}
+
+.gsc-wrapper .gsc-adBlock{
+	display: none;
 }
 .story .pubdate{
 	float: right;

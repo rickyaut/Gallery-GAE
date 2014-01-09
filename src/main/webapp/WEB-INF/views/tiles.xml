@@ -44,4 +44,12 @@
 		<put-attribute name="body" value="/WEB-INF/views/boat.images.jsp" />
 	</definition>
 		
+	<definition name="search" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/search.jsp" />
+	</definition>
+		
+	<definition name="error" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/error.jsp" />
+	</definition>
+		
 </tiles-definitions>

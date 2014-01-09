@@ -1,6 +1,10 @@
 package com.rickyaut.gallery;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,45 +54,56 @@ public class VehiclesController {
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/images", method=RequestMethod.GET)
-	public ModelAndView showCarImages(@PathVariable String brandShortName, @PathVariable String carStandardName){
+	public ModelAndView showCarImages(HttpServletRequest request, HttpServletResponse response, @PathVariable String brandShortName, @PathVariable String carStandardName) throws IOException{
 		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
 		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
 		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
-		ModelAndView modelAndView = new ModelAndView("car.images");
-		setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedCar.getName()), 
-				String.format("Display image collections of %s %s car", selectedBrand.name(), selectedCar.getName()), null);
-		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("cars", cars);
-		modelAndView.addObject("selectedCar", selectedCar);
-		return modelAndView;
+		if(selectedCar == null){
+			response.sendRedirect(String.format("/brand/%s/cars", brandShortName));
+			return null;
+		}else{
+			ModelAndView modelAndView = new ModelAndView("car.images");
+			setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedCar.getName()), 
+					String.format("interior images/photos and exterior images/photos gallery of %s %s car", selectedBrand.name(), selectedCar.getName()), null);
+			modelAndView.addObject("selectedBrand", selectedBrand);
+			modelAndView.addObject("cars", cars);
+			modelAndView.addObject("selectedCar", selectedCar);
+			return modelAndView;
+		}
 	}
 	
 	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/video", method=RequestMethod.GET)
-	public ModelAndView playCarVideo(@PathVariable String brandShortName, @PathVariable String carStandardName, @RequestParam("youtubeID") String youtubeID){
+	public ModelAndView playCarVideo(HttpServletRequest request, HttpServletResponse response, @PathVariable String brandShortName, @PathVariable String carStandardName, @RequestParam("youtubeID") String youtubeID) throws IOException{
 		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
 		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
-		if(selectedCar.getVideos()==null||selectedCar.getVideos().isEmpty()){
-			List<Video> videos = vehicleService.findCarYoutubeVideos(selectedBrand, carStandardName);
-			selectedCar.setVideos(videos);
-		}
-		Video selectedVideo = null;
-		for(Video video: selectedCar.getVideos()){
-			if(StringUtils.equals(video.getYoutubeID(), youtubeID)){
-				selectedVideo = video;
+		if(selectedCar == null){
+			response.sendRedirect(String.format("/brand/%s/cars", brandShortName));
+			return null;
+		}else{
+			if(selectedCar.getVideos()==null||selectedCar.getVideos().isEmpty()){
+				List<Video> videos = vehicleService.findCarYoutubeVideos(selectedBrand, carStandardName);
+				selectedCar.setVideos(videos);
 			}
+			Video selectedVideo = null;
+			for(Video video: selectedCar.getVideos()){
+				if(StringUtils.equals(video.getYoutubeID(), youtubeID)){
+					selectedVideo = video;
+				}
+			}
+			List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
+			ModelAndView modelAndView = new ModelAndView("car.videos");
+			setMetaDataIntoMV(modelAndView, String.format("%s %s Videos", selectedBrand.name(), selectedCar.getName()),  
+					String.format("Play popular youtube videos about %s %s car", selectedBrand.name(), selectedCar.getName()), selectedVideo==null?"":selectedVideo.getThumbnailURL());
+			modelAndView.addObject("selectedBrand", selectedBrand);
+			modelAndView.addObject("cars", cars);
+			modelAndView.addObject("selectedCar", selectedCar);
+			return modelAndView;
 		}
-		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
-		ModelAndView modelAndView = new ModelAndView("car.videos");
-		setMetaDataIntoMV(modelAndView, String.format("%s %s Videos", selectedBrand.name(), selectedCar.getName()),  
-				String.format("Display popular youtube videos about %s %s car", selectedBrand.name(), selectedCar.getName()), selectedVideo==null?"":selectedVideo.getThumbnailURL());
-		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("cars", cars);
-		modelAndView.addObject("selectedCar", selectedCar);
-		return modelAndView;
+
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/videos", method=RequestMethod.GET)
-	public String showCarVideos(@PathVariable String brandShortName, @PathVariable String carStandardName){
+	public String showCarVideos(HttpServletRequest request, HttpServletResponse response, @PathVariable String brandShortName, @PathVariable String carStandardName){
 		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
 		List<Video> videos = vehicleService.findCarYoutubeVideos(selectedBrand, carStandardName);
 		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
@@ -97,19 +112,24 @@ public class VehiclesController {
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/car/{carStandardName}/stories", method=RequestMethod.GET)
-	public ModelAndView showCarStories(@PathVariable String brandShortName, @PathVariable String carStandardName){
+	public ModelAndView showCarStories(HttpServletRequest request, HttpServletResponse response, @PathVariable String brandShortName, @PathVariable String carStandardName) throws IOException{
 		CarBrand selectedBrand = CarBrand.findByShortName(brandShortName);
 		List<Vehicle> cars = vehicleService.findCarsByBrand(selectedBrand);
 		Vehicle selectedCar = vehicleService.getCar(selectedBrand, carStandardName);
-		List<Story> stories = vehicleService.findCarStories(selectedBrand, carStandardName);
-		selectedCar.setStories(stories);
-		ModelAndView modelAndView = new ModelAndView("car.stories");
-		setMetaDataIntoMV(modelAndView, String.format("%s %s stories", selectedBrand.name(), selectedCar.getName()),  
-				String.format("Display useful stories about %s %s", selectedBrand.name(), selectedCar.getName()), null);
-		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("cars", cars);
-		modelAndView.addObject("selectedCar", selectedCar);
-		return modelAndView;
+		if(selectedCar == null){
+			response.sendRedirect(String.format("/brand/%s/cars", brandShortName));
+			return null;
+		}else{
+			List<Story> stories = vehicleService.findCarStories(selectedBrand, carStandardName);
+			selectedCar.setStories(stories);
+			ModelAndView modelAndView = new ModelAndView("car.stories");
+			setMetaDataIntoMV(modelAndView, String.format("%s %s stories", selectedBrand.name(), selectedCar.getName()),  
+					String.format("Read hot news and useful stories about %s %s", selectedBrand.name(), selectedCar.getName()), null);
+			modelAndView.addObject("selectedBrand", selectedBrand);
+			modelAndView.addObject("cars", cars);
+			modelAndView.addObject("selectedCar", selectedCar);
+			return modelAndView;
+		}
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/trucks", method=RequestMethod.GET)
@@ -130,17 +150,22 @@ public class VehiclesController {
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/truck/{truckStandardName}/images", method=RequestMethod.GET)
-	public ModelAndView showTruckImages(@PathVariable String brandShortName, @PathVariable String truckStandardName){
+	public ModelAndView showTruckImages(HttpServletRequest request, HttpServletResponse response, @PathVariable String brandShortName, @PathVariable String truckStandardName) throws IOException{
 		TruckBrand selectedBrand = TruckBrand.findByShortName(brandShortName);
 		List<Vehicle> trucks = vehicleService.findTrucksByBrand(selectedBrand);
 		Vehicle selectedTruck = vehicleService.getTruck(selectedBrand, truckStandardName);
-		ModelAndView modelAndView = new ModelAndView("truck.images");
-		setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedTruck.getName()), 
-				String.format("Display image collections of %s %s truck", selectedBrand.name(), selectedTruck.getName()), null);
-		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("trucks", trucks);
-		modelAndView.addObject("selectedTruck", selectedTruck);
-		return modelAndView;
+		if(selectedTruck == null){
+			response.sendRedirect(String.format("/brand/%s/trucks", brandShortName));
+			return null;
+		}else{
+			ModelAndView modelAndView = new ModelAndView("truck.images");
+			setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedTruck.getName()), 
+					String.format("Display image collections of %s %s truck", selectedBrand.name(), selectedTruck.getName()), null);
+			modelAndView.addObject("selectedBrand", selectedBrand);
+			modelAndView.addObject("trucks", trucks);
+			modelAndView.addObject("selectedTruck", selectedTruck);
+			return modelAndView;
+		}
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/boats", method=RequestMethod.GET)
@@ -161,17 +186,22 @@ public class VehiclesController {
 	}
 
 	@RequestMapping(value="/brand/{brandShortName}/boat/{boatStandardName}/images", method=RequestMethod.GET)
-	public ModelAndView showBoatImages(@PathVariable String brandShortName, @PathVariable String boatStandardName){
+	public ModelAndView showBoatImages(HttpServletRequest request, HttpServletResponse response, @PathVariable String brandShortName, @PathVariable String boatStandardName) throws IOException{
 		BoatBrand selectedBrand = BoatBrand.findByShortName(brandShortName);
 		List<Vehicle> boats = vehicleService.findBoatsByBrand(selectedBrand);
 		Vehicle selectedBoat = vehicleService.getBoat(selectedBrand, boatStandardName);
-		ModelAndView modelAndView = new ModelAndView("boat.images");
-		setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedBoat.getName()), 
-				String.format("Display image collections of %s %s boat", selectedBrand.name(), selectedBoat.getName()), null);
-		modelAndView.addObject("selectedBrand", selectedBrand);
-		modelAndView.addObject("boats", boats);
-		modelAndView.addObject("selectedBoat", selectedBoat);
-		return modelAndView;
+		if(selectedBoat == null){
+			response.sendRedirect(String.format("/brand/%s/boats", brandShortName));
+			return null;
+		}else{
+			ModelAndView modelAndView = new ModelAndView("boat.images");
+			setMetaDataIntoMV(modelAndView, String.format("%s %s Images", selectedBrand.name(), selectedBoat.getName()), 
+					String.format("Display image collections of %s %s boat", selectedBrand.name(), selectedBoat.getName()), null);
+			modelAndView.addObject("selectedBrand", selectedBrand);
+			modelAndView.addObject("boats", boats);
+			modelAndView.addObject("selectedBoat", selectedBoat);
+			return modelAndView;
+		}
 	}
 
 }

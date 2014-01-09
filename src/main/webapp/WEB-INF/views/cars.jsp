@@ -15,7 +15,7 @@
 				<c:set var="carName"><%=GalleryUtils.toStandardName(pageContext.getAttribute("carName").toString()) %></c:set>
 		        <div class="col-sm-6 col-md-3">
 		          <a href="/brand/${selectedBrand.shortName }/car/${carName}/images" class="thumbnail">
-		            <img src="${car.thumbnailUrl }" style="width:180px">
+		            <img src="${car.thumbnailUrl }" style="width:180px" alt="${carName} model image">
 		            <div class="caption">
 		              <h3>${car.name }</h3>
 		            </div>

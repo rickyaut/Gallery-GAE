@@ -63,7 +63,8 @@
 		      <div class="carousel-inner">
 		      	<c:forEach items="${images }" var="image" varStatus="status">
 			        <div class="item ${status.index==0?'active':'' }">
-			          <img src="${image.imageUrl }">
+						<c:set var="carImageDesc"><c:choose><c:when test="${not empty image.description }">${image.description }</c:when><c:otherwise>${selectedCar.name } Interior/Exterior images</c:otherwise></c:choose></c:set>
+			          <img src="${image.imageUrl }" alt='${carImageDesc}'>
 			          <div class="container">
 			            <div class="carousel-caption">
 			              <h1></h1>

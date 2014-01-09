@@ -60,7 +60,7 @@ public class ContactusController {
 	public ModelAndView requestContactUs(){
 		ModelAndView mv = new ModelAndView("contactus");
 		mv.addObject("meta_title", "AllMotorsGallery - "+ "Contact us");
-		mv.addObject("meta_description", "You can contact us by filling the form");
+		mv.addObject("meta_description", "Please contact us by filling the form");
 		return mv;
 	}
 	

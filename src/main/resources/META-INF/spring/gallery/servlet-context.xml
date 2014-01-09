@@ -69,4 +69,5 @@
     <!-- 
     <mvc:view-controller path="/contact-us" view-name="contactus"/>
      -->
+    <mvc:view-controller path="/error" view-name="error"/>
 </beans>
