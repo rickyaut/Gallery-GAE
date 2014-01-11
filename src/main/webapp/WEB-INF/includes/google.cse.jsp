@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   	(function() {
     	var cx = '000462782118264271447:fs4jg6pgaqu';
     	var gcse = document.createElement('script');

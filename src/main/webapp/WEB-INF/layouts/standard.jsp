@@ -32,71 +32,82 @@
     <script type="text/javascript" src="<c:url value="/js/jquery-validate/jquery.validate.min.js" />"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap/bootstrap.min.js" />"></script>
     <script type="text/javascript" src="<c:url value="/js/gallery.js" />"></script>
+    <c:if test="${not empty param.testByMyself }">
+    	<script type="text/javascript">
+    		$(function(){
+    			$.each($("a"), function(index, anchor){
+    					var href = $(anchor).attr("href").trim();
+    					if(href.indexOf("?")<0){
+    						href +="?"
+    					}
+    					if(href.match(/\?/)){//if it ends with ?
+    						href += "testByMyself=testByMyself"
+    					} else if(href.indexOf("testByMyself")<0){
+    						href += "&testByMyself=testByMyself"
+    					}
+    					$(anchor).attr("href", href)
+    				})
+			})
+		</script>
+    </c:if>
 <%@include file="../includes/google.analytics.jsp" %>
 <%@include file="../includes/google.cse.jsp" %>
 </head>
 <body>
 <%@include file="../includes/facebook.sdk.jsp" %>
-	<div class="container"><div class="page-header">
-		<div id="gsc-searchbox"><gcse:searchbox-only resultsUrl="/search"></gcse:searchbox-only></div>
-	</div></div>
-<div class="container">
-	<div class="navbar navbar-default" role="navigation">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            	<span class="sr-only">Toggle navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-          	</button>
-          	<a class="navbar-brand ${requestURI eq '/home' ? 'active':''}" href="/">Home</a>
+	<div class="container">
+		<div class="page-header">
+			<div id="gsc-searchbox"><gcse:searchbox-only resultsUrl="/search"></gcse:searchbox-only></div>
 		</div>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-	            <li class="dropdown ${fn:contains(requestURI, '/car') ? 'active':''}">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cars <b class="caret"></b></a>
-		            <ul class="dropdown-menu">
-		            	<c:forEach items="${carBrands }" var="brand">
-			            <li><a href="/brand/${brand.shortName }/cars"><spring:message code="${brand.code }"/></a></li>
-		            	</c:forEach>
-		            </ul>
-	            </li>
-	            <li class="dropdown ${fn:contains(requestURI, '/truck') ? 'active':''}">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Truck <b class="caret"></b></a>
-		            <ul class="dropdown-menu">
-		            	<c:forEach items="${truckBrands }" var="brand">
-			            <li><a href="/brand/${brand.shortName }/trucks"><spring:message code="${brand.code }"/></a></li>
-		            	</c:forEach>
-		            </ul>
-	            </li>
-	            <li class="dropdown ${fn:contains(requestURI, '/boat') ? 'active':''}">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boat <b class="caret"></b></a>
-		            <ul class="dropdown-menu">
-		            	<c:forEach items="${boatBrands }" var="brand">
-			            <li><a href="/brand/${brand.shortName }/boats"><spring:message code="${brand.code }"/></a></li>
-		            	</c:forEach>
-		            </ul>
-	            </li>
-	            <li class="${requestURI eq '/contact-us' ? 'active':''}"><a href="/contact-us"><spring:message code="contact.us"/></a></li>
-	        </ul>
-	        <%--
-	        <ul class="nav navbar-nav navbar-right">
-	            <li class="active"><a href="./">Default</a></li>
-	            <li><a href="../navbar-static-top/">Static top</a></li>
-	            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-          	</ul>
-          	 --%>
+		<div class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+	            	<span class="sr-only">Toggle navigation</span>
+	            	<span class="icon-bar"></span>
+	            	<span class="icon-bar"></span>
+	            	<span class="icon-bar"></span>
+	          	</button>
+	          	<a class="navbar-brand ${requestURI eq '/home' ? 'active':''}" href="/">Home</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+		            <li class="dropdown ${fn:contains(requestURI, '/car') ? 'active':''}">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cars <b class="caret"></b></a>
+			            <ul class="dropdown-menu">
+			            	<c:forEach items="${carBrands }" var="brand">
+				            <li><a href="/brand/${brand.shortName }/cars"><spring:message code="${brand.code }"/></a></li>
+			            	</c:forEach>
+			            </ul>
+		            </li>
+		            <li class="dropdown ${fn:contains(requestURI, '/truck') ? 'active':''}">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Truck <b class="caret"></b></a>
+			            <ul class="dropdown-menu">
+			            	<c:forEach items="${truckBrands }" var="brand">
+				            <li><a href="/brand/${brand.shortName }/trucks"><spring:message code="${brand.code }"/></a></li>
+			            	</c:forEach>
+			            </ul>
+		            </li>
+		            <li class="dropdown ${fn:contains(requestURI, '/boat') ? 'active':''}">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boat <b class="caret"></b></a>
+			            <ul class="dropdown-menu">
+			            	<c:forEach items="${boatBrands }" var="brand">
+				            <li><a href="/brand/${brand.shortName }/boats"><spring:message code="${brand.code }"/></a></li>
+			            	</c:forEach>
+			            </ul>
+		            </li>
+		            <li class="${requestURI eq '/contact-us' ? 'active':''}"><a href="/contact-us"><spring:message code="contact.us"/></a></li>
+		        </ul>
+			</div>
 		</div>
-	</div>
-	<div id="content">
-		<div id="main" class="span-18 last">
-			<tiles:insertAttribute name="body" />
+		<div id="content">
+			<div id="main" class="span-18 last">
+				<tiles:insertAttribute name="body" />
+			</div>
+		</div>
+		<hr />
+		<div id="footer">
+			<div class="container">You are accessing from <%=request.getHeader("X-AppEngine-City") %>, <%=request.getHeader("X-AppEngine-Region") %>, <%=request.getHeader("X-AppEngine-Country") %></div>
 		</div>
 	</div>
-	<hr />
-	<div id="footer">
-		<div class="container">You are accessing from <%=request.getHeader("X-AppEngine-City") %>, <%=request.getHeader("X-AppEngine-Region") %>, <%=request.getHeader("X-AppEngine-Country") %></div>
-	</div>
-</div>
 </body>
 </html>
