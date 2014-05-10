@@ -62,5 +62,6 @@
 				</c:forEach>
 			</div>
 		</div>
+		<%@include file="../includes/chitika.jsp" %>
 	</div>
 </div>

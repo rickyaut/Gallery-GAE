@@ -66,5 +66,6 @@
 		      <a class="right carousel-control" href="#boat-images-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 		    </div>
 		</div>
+		<%@include file="../includes/chitika.jsp" %>
 	</div>
 </div>

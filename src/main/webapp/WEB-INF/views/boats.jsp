@@ -24,5 +24,6 @@
 		        </div>
 			</c:if>
 		</c:forEach>
+	<%@include file="../includes/chitika.jsp" %>
     </div>
 </div>
